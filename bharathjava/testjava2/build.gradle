@@ -1,0 +1,111 @@
+def projectVersion = "2.0"
+
+def packageVersion = "1.0"
+
+project.ext.projectVersion = "3.0"
+
+ext.javaVersion = "1.8"
+
+project.task("task1")
+task "task2"
+task "task3"
+task3 << { println "This is the alternative for doLast i.e. << " }
+task3 << { println "This is another last action of task3" }
+
+task ("task4")
+task4.description="This is all about task4"
+task4.doFirst { println "This is task4 First" }
+task4.doLast { println "This si task4 Last" }
+
+
+task ("task5")
+task5.description="This is all about task5"
+
+task task6
+
+
+task task7
+
+project.task("task8")
+
+task("task9")
+task9.description="This is all about task9"
+
+project.task("task10")
+task10.description="This is all about task10"
+task10.doFirst {
+println "This is Task10 First action"
+}
+task10.doLast {
+println "This is Task10 Last action"
+}
+
+
+task task11 {
+doLast() {
+println "task11 Last action"
+}
+}
+
+task task12 << {println "Task12 Last action"}
+
+project.task("task13")
+task13.doLast { println "task13 last action" }
+task13.doLast { println "task13 another last action" }
+
+
+task task14 {
+description "This is task14"
+doLast {
+println "This task4 last action"
+}
+doLast {
+println "This is task4 last last action"
+}
+}
+
+
+
+task "task15" {
+description "This my personal task i.e. task 15"
+doFirst {
+println "This is First action of task15"
+}
+doLast {
+println "This is Last action of task15"
+}
+}
+
+task15.doFirst { println "This is task15 another first" }
+task15.doLast { println "This is task15 another last" }
+
+
+task15.dependsOn task14
+task15.dependsOn task10
+task14.dependsOn task13
+task14.dependsOn task12
+
+
+task task16 {
+description "This is task 16"
+dependsOn task15
+doFirst { println "This is my First action in task16" }
+}
+
+
+
+
+task task17 {
+description "THis is task17"
+dependsOn task16
+doFirst { println "This is First action in task17 and version is $projectVersion" }
+doLast { println "This is Last action in task17 and the version is $packageVersion" }
+}
+
+
+task task18 {
+description "This is task18"
+dependsOn task17
+doFirst { println "The first action on java version $javaVersion" }
+doLast { println "The last action on version $projectVersion" }
+}
