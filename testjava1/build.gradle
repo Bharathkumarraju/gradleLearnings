@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+
+task hello {
+doFirst {
+println "First bharath"
+}
+doLast {
+println "Last Bharath"
+}
+}
+
+task wrapper(type: Wrapper) {
+gradleVersion = '4.1'
+}
+

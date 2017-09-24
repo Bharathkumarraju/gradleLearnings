@@ -1,0 +1,60 @@
+/*
+task wrapper(type: Wrapper) {
+gradleVersion = "4.1"
+}
+*/
+
+task test {
+doLast { println "This is test by bharath" }
+}
+
+def datacontent = copySpec { 
+exclude 'file10','file1','file2','file3'
+from 'bharath1'
+}
+
+// We can write groovy in this build.gradle to accommodate the exclude as below
+//it= iteration
+
+def datafile = copySpec { 
+exclude {
+it.file.name.endsWith('10')
+}
+from 'bharath1'
+}
+
+
+task copyfiles2(type: Copy) {
+with datacontent
+into 'bharath2'
+}
+
+task copyfiles3(type: Copy) {
+with datafile
+into 'bharath2'
+}
+
+task copyFiles(type: Copy) {
+exclude 'file10','file1','file2','file3','file4','file5','file6'
+from 'bharath1'
+into 'bharath2'
+}
+
+task copyConfig(type: Copy) {
+include 'test.xml'
+from 'bharath1'
+into 'bharath2'
+expand (
+[ reminder : 'bharath/bharathtest' ]
+)
+}
+
+
+task copyConfig2(type: Copy) {
+include 'web.yml'
+from 'bharath1'
+into 'bharath2'
+expand (
+[ hello : 'bharath/bharathtest' ]
+)
+}

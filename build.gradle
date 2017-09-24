@@ -1,0 +1,8 @@
+task hello {
+doFirst{
+println "this is the first action hello world"
+}
+doLast{
+println " this is the last action hello bharath from build.gradle file"
+}
+}
