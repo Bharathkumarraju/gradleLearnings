@@ -11,6 +11,8 @@ gradle task wrapper
 ##### so from next on wards we use gradlew to build our project.
 ##### This is best practice to maintain single version of gradle across all the projects.
 
-# ./gradlew clean build
-# ./gradlew tasks --all
-# ./gradlew hello
+### ./gradlew clean build
+### ./gradlew tasks --all
+### ./gradlew hello
+
+#### https://docs.gradle.org/current/dsl/ 
