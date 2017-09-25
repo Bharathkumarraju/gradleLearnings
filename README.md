@@ -16,7 +16,7 @@ gradleVersion = "4.1"
 ##### so from next on wards we use gradlew to build our project.
 ##### This is best practice to maintain single version of gradle across all the projects.
 ##### the best thing is copy all gradlew,gradlew.bat and gradlew to all your GIT repos, So that whomever build your java repos will use gradlew to build the project that means same version of gradle everywere :) As simple as that
-##### when you run firdt time gradlew it downloads gradle after that :) we are good to go
+##### when you run first time gradlew it downloads gradle after that :) we are good to go
 
 ### ./gradlew clean build
 ### ./gradlew tasks --all
