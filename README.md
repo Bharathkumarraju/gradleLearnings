@@ -3,7 +3,12 @@ Leran gradle from build.gradle java project
 ```
 gradle tasks --all
 gradle task hello
-gradle task wrapper
+gradle task wrapper // wrapper task defined first time as below :) 
+
+[root@bharath javaproject]# cat build.gradle
+task wrapper(type: Wrapper) {
+gradleVersion = "4.1"
+}
 
 ```
 
