@@ -10,6 +10,10 @@ task wrapper(type: Wrapper) {
 gradleVersion = "4.1"
 }
 
+you can also do above steps with below simple command to generate wrapper  :) 
+
+gradle wrapper --gradle-version 4.1 // no need to write inside build.gradle file also :)
+
 ```
 
 ##### once we run wrapper task we can get .gradle downloaded into the users home directory with all the gradle binaries.and also in the current directory(From where you run the gradle) has graldew,gradlew.bat files and gradle folder with gradlewrapper.properties and gradlewrapper jar
