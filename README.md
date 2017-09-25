@@ -12,9 +12,11 @@ gradleVersion = "4.1"
 
 ```
 
-##### once we run wrapper task we can get .gradle downloaded into the users home directory with all the gradle binaries.and also graldew,gradlew.bat files and gradle folder with gradlewrapper.properties and gradlewrapper jar
+##### once we run wrapper task we can get .gradle downloaded into the users home directory with all the gradle binaries.and also in the current directory(From where you run the gradle) has graldew,gradlew.bat files and gradle folder with gradlewrapper.properties and gradlewrapper jar
 ##### so from next on wards we use gradlew to build our project.
 ##### This is best practice to maintain single version of gradle across all the projects.
+##### the best thing is copy all gradlew,gradlew.bat and gradlew to all your GIT repos, So that whomever build your java repos will use gradlew to build the project that means same version of gradle everywere :) As simple as that
+##### when you run firdt time gradlew it downloads gradle after that :) we are good to go
 
 ### ./gradlew clean build
 ### ./gradlew tasks --all
