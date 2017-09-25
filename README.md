@@ -32,14 +32,22 @@ gradle wrapper --gradle-version 4.1 // no need to write inside build.gradle file
 
 When you run javaproject the directory structure will create like below..
 
-[root@bharath javaproject]# vim src/main/java/com/bharathwebapp/repository/HelloWorld.java
+Project_Name: javaproject
+
+[root@bharath javaproject]# cat build.gradle
+
+apply plugin: 'java'
+version='1.0.0-SNAPSHOT'
+[root@bharath javaproject]#
+
+[root@bharath javaproject]# ./gradlew clean
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
 [root@bharath javaproject]# ./gradlew build
 
 BUILD SUCCESSFUL in 1s
 2 actionable tasks: 2 executed
-[root@bharath javaproject]#
-
-
 [root@bharath javaproject]# tree -A build
 build
 ├── classes
@@ -51,13 +59,14 @@ build
 │                       ├── Greeter.class
 │                       └── HelloWorld.class
 ├── libs
-│   └── javaproject.jar
+│   └── javaproject-1.0.0-SNAPSHOT.jar
 └── tmp
     ├── compileJava
     └── jar
         └── MANIFEST.MF
 
 10 directories, 4 files
+[root@bharath javaproject]#
 [root@bharath javaproject]# java -cp build/classes/java/main com.bharathwebapp.repository.HelloWorld
 Hello world!
 [root@bharath javaproject]#
